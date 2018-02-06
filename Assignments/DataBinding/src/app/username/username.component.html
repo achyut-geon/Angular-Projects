@@ -1,0 +1,12 @@
+<!-- 
+  <div><input type="text" class="form-control" [(ngModel)]="username" (input)="onUpdate($event)"></div>
+<div><p>{{username}}</p></div>
+<div><button type="button" class="btn btn-primary" [disabled]="isresetdisabled" 
+  (click)="resetUsername()">Reset Username</button></div> 
+-->
+
+<!-- Alternate solution without any eventbinding -->
+<div><input type="text" class="form-control" [(ngModel)]="username"></div>
+<div><p>{{username}}</p></div>
+<div><button type="button" class="btn btn-primary" [disabled]="username===''"
+  (click)="username=''">Reset Username</button></div> 

@@ -1,0 +1,13 @@
+<input type="text" (input)="onInputChanged()" [(ngModel)]="serverId"> 
+<p *ngIf="hasText"><button (click)="addServer()">Add Server</button></p>
+<div *ngFor="let server of servers">
+  <div [ngStyle]="{backgroundColor: getBackgroundColor(server)}"
+  [ngClass]="{even:getNumberType(server)==='even'}">Server {{server}} added.</div>
+</div>
+<div>
+  <button (click)="onClick()">Display Details</button>
+  <p *ngIf="show">Password=Hello</p>
+  <div *ngFor="let log of logs; let i=index" 
+    [ngStyle]="{backgroundColor:i>=4 ? 'blue':'transparent'}"
+    [ngClass]="{highlight:i>=4}">{{log}}</div>
+</div>

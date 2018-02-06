@@ -1,0 +1,12 @@
+<!-- <button (click)="onClick()">Display Details</button>
+<p *ngIf="show">Password=Hello</p>
+<div *ngFor="let log of logs" 
+  [ngStyle]="{backgroundColor:changebackground(log)}"
+  [ngClass]="{highlight:changecolor(log)==='whitefont'}">{{log}}</div> -->
+
+<!-- Alternate solution with inline code -->
+<button (click)="onClick()">Display Details</button>
+<p *ngIf="show">Password=Hello</p>
+<div *ngFor="let log of logs" 
+  [ngStyle]="{backgroundColor:log>=5 ? 'blue':'transparent'}"
+  [ngClass]="{highlight:log>=5}">{{log}}</div>
