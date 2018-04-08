@@ -1,9 +1,19 @@
-<div class="containe">
-  <div class="col-xs-12">
-    <app-game (counterChanged)="onCounterChanged($event)"
-    (counterStopped)="onCounterStopped($event)"></app-game>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game (counterChanged)="onCounterChanged($event)"
+      (counterStopped)="onCounterStopped($event)"></app-game>
+    </div>
   </div>
-  <div *ngFor = 'let count of counts'>
-    <p>{{count}}</p>
+  <div class="row">
+    <div class="col-xs-12" *ngFor = 'let count of counts'>
+      <div class="col-md-5" *ngIf="count%2==0; then evencomponent; else oddcomponent"></div>
+      <ng-template #evencomponent>
+          <app-even [evenCount]="count"></app-even>
+      </ng-template>
+      <ng-template #oddcomponent>
+          <app-odd [oddCount]="count"></app-odd>
+      </ng-template>
+    </div>
   </div>
 </div>
