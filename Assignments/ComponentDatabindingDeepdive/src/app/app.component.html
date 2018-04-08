@@ -1,0 +1,9 @@
+<div class="containe">
+  <div class="col-xs-12">
+    <app-game (counterChanged)="onCounterChanged($event)"
+    (counterStopped)="onCounterStopped($event)"></app-game>
+  </div>
+  <div *ngFor = 'let count of counts'>
+    <p>{{count}}</p>
+  </div>
+</div>

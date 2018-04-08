@@ -11,3 +11,6 @@
     [ngStyle]="{backgroundColor:i>=4 ? 'blue':'transparent'}"
     [ngClass]="{highlight:i>=4}">{{log}}</div>
 </div>
+<div *ngFor="let value of values;" [ngClass]="getValue(value)">
+  {{value}}
+</div>
